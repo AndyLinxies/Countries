@@ -63,9 +63,9 @@ export default new Vuex.Store({
     //Return the result
     getCountry(state) {
       return(
-        //Si inputIsSubmited=true ET searchValue n'est pas vide ALORS il fait le filter sur l'array resultsAll et nous revoit celui dont le name correspond au name du input
+        //Si inputIsSubmited=true ET searchValue n'est pas vide ALORS il fait le filter sur l'array resultsAll et nous revoit celui dont le name correspond a ce qu'on a tapé  dans le input
         state.inputIsSubmited && state.searchValue !="" ? state.resultsAll.filter((country)=>{
-          return country.name==state.searchValue
+          return country.name.includes(state.searchValue)
         } ) : state.resultsAll
 
         ) 
